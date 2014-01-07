@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tutorial: Parser</title>
+</head>
+<body>
+    <h1>Parser</h1>
+    <button data-dojo-type="dijit/form/Button" tabIndex=2 data-dojo-props="iconClass: 'checkmark'">OK</button>
+	<!-- load dojo and provide config via data attribute -->
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="isDebug:1, async:1"></script>
+    <script>
+    require(["dojo/parser", "dojo/ready"], function(parser, ready) {
+        ready(function() {
+            parser.parse();
+        });
+    });
+    </script>
+</body>
+</html>
