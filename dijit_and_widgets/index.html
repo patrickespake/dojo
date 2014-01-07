@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tutorial: Dijit and Widgets</title>
+    <link media="screen" href="demo.css" rel="stylesheet">
+    <link media="screen" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/claro/claro.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Demo: watch</h1>
+    <button id="someNode" type="button"></button>
+	<!-- load dojo and provide config via data attribute -->
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="isDebug:1, async:1"></script>
+    <script>
+    require(["dijit/form/Button", "dojo/domReady"], function(Button) {
+        var button = new Button({
+            label: "A label"
+        }, "someNode");
+        
+        var handle = button.watch("label", function(attr, oldValue, newValue){
+           console.log("button." + attr + " changed from '" + oldValue + "' to '" + newValue + "'");
+        });
+        
+        var label = button.get("label");
+        console.log("button's current label: " + label);
+        
+        button.set("label", "A different label");
+        
+        handle.unwatch();
+        
+        button.set("label", "Even more different");
+    });
+    </script>
+</body>
+</html>
