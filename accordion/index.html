@@ -8,7 +8,7 @@
   	<script>
       require(["dijit/layout/AccordionContainer", "dijit/layout/ContentPane", "dojo/domReady!"],
         function(AccordionContainer, ContentPane){
-          var aContainer = new AccordionContainer({style:"height: 300px"}, "markup");
+          var aContainer = new AccordionContainer({style:"height: 300px;width: 600px;"}, "markup");
           aContainer.addChild(new ContentPane({
               title: "This is a content pane",
               content: "Hi!"
