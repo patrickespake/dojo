@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dojo Accordion</title>
+  	<link media="screen" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dijit/themes/claro/claro.css" rel="stylesheet">
+  	<script>dojoConfig = {parseOnLoad: true}</script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="isDebug:1, async:1"></script>
+  	<script>
+      require(["dijit/layout/AccordionContainer", "dijit/layout/ContentPane", "dojo/domReady!"],
+        function(AccordionContainer, ContentPane){
+          var aContainer = new AccordionContainer({style:"height: 300px"}, "markup");
+          aContainer.addChild(new ContentPane({
+              title: "This is a content pane",
+              content: "Hi!"
+          }));
+          aContainer.addChild(new ContentPane({
+              title:"This is as well",
+              content:"Hi how are you?"
+          }));
+          aContainer.addChild(new ContentPane({
+              title:"This too",
+              content:"Hello im fine.. thnx"
+          }));
+          aContainer.startup();
+      });
+  	</script>
+  </head>
+
+  <body class="claro">
+      <div id="markup" style="width: 300px; height: 300px"></div>
+  </body>
+</html>
